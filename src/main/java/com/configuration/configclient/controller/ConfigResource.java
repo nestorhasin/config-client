@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ConfigResource {
 
+    /*
     @Autowired
     private ConfigService configService;
 
@@ -83,4 +85,12 @@ public class ConfigResource {
 
     return new ResponseEntity<>("Configuration Refreshed Sucessfully", HttpStatus.OK);
     }
+    */
+    @Value("${foo:bar}")
+    private String foo;
+	
+	@GetMapping("/foo")
+	public String getFoo() {
+		return foo;
+	}
 }
