@@ -11,20 +11,23 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
+import lombok.Data;
+
+@Data
 @RefreshScope
 @Service
 public class ConfigService {
     
-    @Value("${foo}")
+    @Value("${foo:bar}")
     private String foo;
 
-    @Value("${bar}")
+    @Value("${bar:baz}")
     private String bar;
 
-    @Value("${baz}")
+    @Value("${baz:url}")
     private String baz;
 
-    @Value("${url}")
+    @Value("${url:foo}")
     private String url;
 
     private Map<String, Object> props = new HashMap<>();
