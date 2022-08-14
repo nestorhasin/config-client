@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.4'
+	id 'org.springframework.boot' version '2.5.2'
 	//id 'org.springframework.boot' version '2.3.3.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.configuration'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -29,6 +29,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	// RETRY y AOP
+
+	// BOOTSTRAP
+	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 	
 	implementation 'org.springframework.cloud:spring-cloud-starter-bus-kafka'
 	compileOnly 'org.projectlombok:lombok'
