@@ -81,7 +81,7 @@ public class ConfigResource {
     return new ResponseEntity<>("Configuration Refreshed Sucessfully", HttpStatus.OK);
     }
     */
-    @Value("${foo:bar}")
+    @Value("${foo}")
     private String foo;
 	
 	@GetMapping("/foo")
